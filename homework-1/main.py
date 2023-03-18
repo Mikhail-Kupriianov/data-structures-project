@@ -1,7 +1,7 @@
 from src.stack import Node, Stack
 
 if __name__ == '__main__':
-    n1 = Node(5, None)
+    n1 = Node(5)
     n2 = Node('a', n1)
     print(n1.data)  # 5
     print(n2.data)  # a
