@@ -1,7 +1,7 @@
 """Здесь надо написать тесты с использованием unittest для модуля stack."""
 import unittest
 
-import src.stack
+# import src.stack
 # import pytest
 from src.stack import Node, Stack
 
@@ -50,6 +50,17 @@ class TestStack(unittest.TestCase):
     # assert stack.top.next_node.data == 'data'
     # assert stack.top.next_node.next_node.data == 10
     # assert stack.top.next_node.next_node.next_node is None
+
+    def test_pop(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        data = stack.pop()
+        self.assertEqual(stack.top.data, 'data1')
+        self.assertEqual(data, 'data2')
+        data1 = stack.pop()
+        self.assertEqual(stack.top, None)
+        self.assertEqual(data1, 'data1')
 
 
 if __name__ == '__main__':
