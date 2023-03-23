@@ -35,4 +35,6 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        del_data = self.top.data
+        self.top = self.top.next_node
+        return del_data
