@@ -10,8 +10,8 @@ class Node:
         self.data = data
         self.next_node = next_node
 
-    def __del__(self):
-        print("Удаляется", self.__class__.__name__, self.data)
+    # def __del__(self):
+    #     print("Удаляется", self.__class__.__name__, self.data)
 
 
 class Stack:
