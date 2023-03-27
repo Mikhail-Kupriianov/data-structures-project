@@ -24,7 +24,7 @@ class Queue:
         stack_content = ""
         current_node = self.head
         while current_node is not None:
-            stack_content += str(current_node.data)+"\n"
+            stack_content += str(current_node.data) + "\n"
             current_node = current_node.next_node
         return stack_content[:-1]
 
@@ -42,7 +42,6 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
-
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
@@ -50,19 +49,19 @@ class Queue:
         :return: данные удаленного элемента
         """
         del_data = self.head.data
-        self.head = self.head.next
+        self.head = self.head.next_node
         return del_data
 
 
-if __name__ == '__main__':
-    queue = Queue()
-
-    # Магический метод __str__ возвращает пустую строку
-    print('assert str(Queue()) == "" -> ', str(Queue()))
-
-    queue.enqueue('data1')
-    queue.enqueue('data2')
-    queue.enqueue('data3')
-
-    print("assert queue.head.data == 'data1' -> ", str(queue.head.data))
-    print("assert queue.head.next_node.data == 'data2' -> ", str(queue.head.next_node.data))
+# if __name__ == '__main__':
+#     queue = Queue()
+#
+#     # Магический метод __str__ возвращает пустую строку
+#     print('assert str(Queue()) == "" -> ', str(Queue()))
+#
+#     queue.enqueue('data1')
+#     queue.enqueue('data2')
+#     queue.enqueue('data3')
+#
+#     print("assert queue.head.data == 'data1' -> ", str(queue.head.data))
+#     print("assert queue.head.next_node.data == 'data2' -> ", str(queue.head.next_node.data))
