@@ -10,6 +10,9 @@ class Node:
         self.data = data
         self.next_node = next_node
 
+    def __del__(self):
+        print("Удаляется", self.__class__.__name__, self.data)
+
 
 class Stack:
     """Класс для стека"""
@@ -38,3 +41,13 @@ class Stack:
         del_data = self.top.data
         self.top = self.top.next_node
         return del_data
+
+    def __str__(self):
+        return f"{self.__class__.__name__} - {self.top.data}"
+
+
+if __name__ == '__main__':
+    stack = Stack()
+    stack.push('data1')
+    stack.push('data2')
+    print(str(stack))
