@@ -46,6 +46,10 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(str(queue), "data2\ndata3")
         self.assertEqual(queue.head.data, "data2")
         self.assertEqual(queue.tail.data, "data3")
+        self.assertEqual(queue.dequeue(), "data2")
+        self.assertEqual(queue.dequeue(), "data3")
+        self.assertEqual(queue.dequeue(), None)
+        self.assertEqual(queue.dequeue(), None)
 
 
 if __name__ == '__main__':
