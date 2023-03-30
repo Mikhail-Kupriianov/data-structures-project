@@ -21,12 +21,19 @@ class Queue:
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        stack_content = ""
+        stack_content = []
         current_node = self.head
         while current_node is not None:
-            stack_content += str(current_node.data) + "\n"
+            stack_content.append(current_node.data)
             current_node = current_node.next_node
-        return stack_content[:-1]
+        return '\n'.join(stack_content)
+
+        # stack_content = ""
+        # current_node = self.head
+        # while current_node is not None:
+        #     stack_content += str(current_node.data) + "\n"
+        #     current_node = current_node.next_node
+        # return stack_content[:-1]
 
     def enqueue(self, data):
         """
@@ -48,8 +55,14 @@ class Queue:
 
         :return: данные удаленного элемента
         """
+        if self.head is None:
+            return None
         del_data = self.head.data
-        self.head = self.head.next_node
+        if self.head.next_node:
+            self.head = self.head.next_node
+        else:
+            self.head = None
+            self.tail = None
         return del_data
 
 
