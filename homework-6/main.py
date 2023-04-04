@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     # метод to_list()
     lst = ll.to_list()
-    for item in lst: print(item)
+    [print(item) for item in lst]
     # {'id': 0, 'username': 'serebro'}
     # {'id': 1, 'username': 'lazzy508509'}
     # {'id': 2, 'username': 'mik.roz'}
